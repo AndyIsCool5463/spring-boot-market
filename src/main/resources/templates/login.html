@@ -11,21 +11,41 @@
     <div class="container">
       <form th:action="@{/login}" method="POST">
         <div th:if="${param.error}">
-          invalid username password
+          <div class="alert alert-error">
+            Invalid Username or Password.
+          </div>
         </div>
         <div th:if="${param.logout}">
-          logged out
+          <div class="alert alert-info">
+            You have logged out.
+          </div>
         </div>
         <div class="form-group">
           <label for="username">Email</label>
-          <input type="text" id="username" name="username" />
+          <input
+            class="form-control"
+            type="text"
+            id="username"
+            name="username"
+          />
         </div>
         <div class="form-group">
           <label for="password">Password</label>
-          <input type="password" id="password" name="password" />
+          <input
+            class="form-control"
+            type="password"
+            id="password"
+            name="password"
+          />
         </div>
         <div class="form-group">
-          <input type="submit" name="login-submit" id="login-submit" />
+          <input
+            type="submit"
+            class="login_submit"
+            name="login-submit"
+            id="login-submit"
+            value="Log in."
+          />
         </div>
         <div class="form-group">
           <span

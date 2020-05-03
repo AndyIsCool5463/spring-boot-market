@@ -48,15 +48,14 @@ public class UserController {
     @PostMapping("/register")
     public String register(@ModelAttribute("user") @Valid UserRegistrationDTO userDto, BindingResult result) {
         User existing = userService.findByUsername(userDto.getEmail());
-        System.out.println(userDto.getTerms());
         if (existing != null) {
-            result.rejectValue("email", null, "There is already an email registered idiot.");
+            result.rejectValue("email", null, "There is already an email registered.");
         }
         if (!userDto.getEmail().equals(userDto.getConfirmEmail())) {
-            result.rejectValue("confirmEmail", null, "Email dont match fucktard.");
+            result.rejectValue("confirmEmail", null, "Email dont match.");
         }
         if (!userDto.getPassword().equals(userDto.getConfirmPassword())) {
-            result.rejectValue("confirmPassword", null, "Passwords dont match cunt.");
+            result.rejectValue("confirmPassword", null, "Passwords dont match.");
         }
         if (!userDto.getTerms()) {
             result.rejectValue("terms", null, "Please check the terms.");
