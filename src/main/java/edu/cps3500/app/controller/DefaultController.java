@@ -1,7 +1,10 @@
 package edu.cps3500.app.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+
+import edu.cps3500.app.domain.UserForgotPassword;
 
 @Controller
 public class DefaultController {
@@ -25,13 +28,14 @@ public class DefaultController {
         return "markets";
     }
 
-    @GetMapping("/stocks")
-    public String Stocks() {
-        return "stocks";
-    }
-
     @GetMapping("/aapl")
     public String AAPL() {
         return "stocks/aapl";
+    }
+
+    @GetMapping("/forgotpass")
+    public String forgotPass(Model model) {
+        model.addAttribute("user", new UserForgotPassword());
+        return "forgotpwd";
     }
 }

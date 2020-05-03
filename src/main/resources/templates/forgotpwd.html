@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- This needs to be entered first.-->
+    <div th:replace="fragments/generalCSS :: css" />
+</head>
+
+<body>
+    <div th:replace="fragments/header :: header" />
+    <div th:if="${param.sent}">
+    <div class="alert alert-info">
+        Check your email.
+    </div>
+    </div>
+        <form action="#" th:action="@{/forgot-password}" th:object="${user}" method="post">
+           <div class="form-group" th:classappend="${#fields.hasErrors('email')}? 'has-error': ''">
+            <label for="emailId">Email</label>
+            <input th:field="*{email}" type="text" name="emailId"></input>
+            <p class="error-message" th:each="error : ${#fields.errors('email')}" th:text="${error}">
+                                        Validation Error.
+                                    </p>
+           </div>
+            <input type="submit" value="Reset Password"></input>
+        </form>
+</body>
+<div th:replace="fragments/footer :: footer" />
+
+</html>

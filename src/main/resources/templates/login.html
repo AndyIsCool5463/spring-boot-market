@@ -11,10 +11,10 @@
     <div class="container">
       <form th:action="@{/login}" method="POST">
         <div th:if="${param.error}">
-          invalid username password thing
+          invalid username password
         </div>
         <div th:if="${param.logout}">
-          hahaha logged out
+          logged out
         </div>
         <div class="form-group">
           <label for="username">Email</label>
@@ -32,6 +32,12 @@
             >New User?
             <a href="/" th:href="@{/register}">Register here</a></span
           >
+          <br />
+          <span>
+            <a href="/forgotpass" th:href="@{/forgotpass}">
+              Forgot Password?
+            </a>
+          </span>
         </div>
       </form>
     </div>

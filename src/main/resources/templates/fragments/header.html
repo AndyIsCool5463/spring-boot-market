@@ -45,11 +45,11 @@
         <p>Home ↓</p>
         <ul>
           <img src="images/VisualizedAnalyticsSmall.png" alt="logo">
-      
-          <li><a href="/login">LOGIN</a></li>
+              <li sec:authorize="isAnonymous()"><a href="/login">LOGIN</a></li>
+              <li sec:authorize="isAuthenticated()"><a href="/logout">LOGOUT</a></li>
           <li><a href="/pricing">SUBSCRIBE</a></li>
         </ul>
-      </nav>
+      </nav>  
       <hr>
       </div>
     </div>

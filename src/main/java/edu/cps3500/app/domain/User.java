@@ -15,6 +15,7 @@ public class User {
     private String email;
     private String password;
 
+    @Transient
     @ElementCollection(fetch = FetchType.EAGER)
     private List<Role> roles = new ArrayList<Role>();
 

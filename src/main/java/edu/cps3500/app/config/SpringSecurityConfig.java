@@ -1,7 +1,5 @@
 package edu.cps3500.app.config;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.security.servlet.AntPathRequestMatcherProvider;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -32,8 +30,8 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests().antMatchers("/*", "/js/**", "/css/**", "/images/**").permitAll()
-                .antMatchers("/user/**").access("hasRole('ROLE_USER')").anyRequest().fullyAuthenticated().and()
-                .formLogin().loginPage("/login").loginProcessingUrl("/login").defaultSuccessUrl("/userhome").permitAll()
+                .antMatchers("/userhome").access("hasRole('ROLE_USER')").anyRequest().fullyAuthenticated().and()
+                .formLogin().loginPage("/login").loginProcessingUrl("/login").defaultSuccessUrl("/markets").permitAll()
                 .and().logout().invalidateHttpSession(true).clearAuthentication(true)
                 .logoutRequestMatcher(new AntPathRequestMatcher("/logout")).logoutSuccessUrl("/login?logout")
                 .permitAll();

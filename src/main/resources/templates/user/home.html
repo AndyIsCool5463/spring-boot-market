@@ -5,19 +5,16 @@
     <!-- This needs to be entered first.-->
     <div th:replace="fragments/generalCSS :: css" />
   </head>
+
   <body>
     <div th:replace="fragments/header :: header" />
     <section id="intro" class="bg-light">
-      <div class="container">
-        <div class="heading-block">
-          <p class="logo">
-            <img src="images/VisualAnalyticsMAIN.png" alt="logo">
-          </p>
-          <div style="text-align: center;">
-            
-            <p><button class="btn start"> <a href="/markets" target="_blank">GET STARTED</button></p>
-        </div>
-      </div>
+      User Info:
+      <br />
+      Signed In User: <span sec:authentication="name">null</span>
+      <br />
+      Roles:
+      <span sec:authentication="principal.authorities">[]</span>
     </section>
   </body>
   <div th:replace="fragments/footer :: footer" />

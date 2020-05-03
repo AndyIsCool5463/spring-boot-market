@@ -1,0 +1,91 @@
+<!--
+    PLEASE
+    PLEASE
+    PLEASE
+    PLEASE
+    PLEASE
+    RE DO THIS
+    STRAIGHT COPIED FROM THE PROJECT JUST FOR IMPLEMENTATION
+    REDO THIS LATER
+    TODO: fix later.
+-->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Table</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style>
+      table {
+        border-collapse: collapse;
+        width: 50%;
+      }
+
+      table,
+      th,
+      td {
+        border: solid black 2px;
+      }
+
+      th {
+        height: 50px;
+      }
+
+      th,
+      td {
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div th:if="${allStocks} != null">
+      <h1>Stock list</h1>
+      <div>
+        <p>Comparable Apple Valuation</p>
+        <table style="border: solid 2px;">
+          <!-- <caption> Comparable Apple Valuation</caption> -->
+          <tr>
+            <th>Company</th>
+            <th>Ticker</th>
+            <th>Stock price</th>
+          </tr>
+
+          <tr th:each="stock : ${allStocks}">
+            <td th:text="${stock.company}"></td>
+            <td th:text="${stock.ticker}"></td>
+            <td th:text="'$' + ${stock.price}"></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <br th:if="${stockPEs} != null and ${allStocks} != null" />
+    <div th:if="${stockPEs} != null">
+      <h1>Stock PE list</h1>
+      <div>
+        <p>Comparable Apple Valuation</p>
+        <table style="border: solid 2px;">
+          <!-- <caption> Comparable Apple Valuation</caption> -->
+          <tr>
+            <th>Company</th>
+            <th>Ticker</th>
+            <th>Stock price</th>
+            <th>Avg. Earnings Estimate<br />(current year)</th>
+            <th>Avg. Earnings Estimate<br />(next year)</th>
+            <th>Estimated Annual Growth</th>
+            <th>P/E to Growth<br />(forward)</th>
+          </tr>
+
+          <tr th:each="stockPE : ${stockPEs}">
+            <td th:text="${stockPE.company}"></td>
+            <td th:text="${stockPE.ticker}"></td>
+            <td th:text="'$' + ${stockPE.price}"></td>
+            <td th:text="'$' + ${stockPE.this_year_earning}"></td>
+            <td th:text="'$' + ${stockPE.next_year_earning}"></td>
+            <td th:text="${stockPE.growth} + '%'"></td>
+            <td th:text="${stockPE.pe_to_growth}"></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>

@@ -21,6 +21,16 @@ public class UserRegistrationDTO {
     @NotEmpty
     private String confirmEmail;
 
+    private Boolean terms;
+
+    public Boolean getTerms() {
+        return this.terms;
+    }
+
+    public void setTerms(Boolean terms) {
+        this.terms = terms;
+    }
+
     public String getFirstName() {
         return this.firstName;
     }
