@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <!-- This needs to be entered first.-->
+    <div th:replace="fragments/generalCSS :: css" />
+  </head>
+
+  <body>
+    <div th:replace="fragments/header :: header" />
+    <div class="register1">
+      <h2 align="center">ONE DAY</h2>
+      <br />
+      <h1 align="center">$30</h1>
+      <button
+        type="submit"
+        class="day_subscribe"
+        id="termsCheck"
+        onclick="window.location.href = 'register.html';"
+        disabled
+      >
+        SUBSCRIBE
+      </button>
+    </div>
+
+    <div class="register2">
+      <h2 align="center">QUARTER</h2>
+      <br />
+      <h1 align="center">$90</h1>
+      <button
+        type="submit"
+        class="quarter_subscribe"
+        id="termsCheck2"
+        onclick="window.location.href = 'register.html';"
+        disabled
+      >
+        SUBSCRIBE
+      </button>
+    </div>
+
+    <div class="register3">
+      <h2 align="center">YEAR</h2>
+      <br />
+      <h1 align="center">$290</h1>
+      <button
+        type="submit"
+        class="year_subscribe"
+        id="termsCheck3"
+        onclick="window.location.href = 'register.html';"
+        disabled
+      >
+        SUBSCRIBE
+      </button>
+    </div>
+
+    <div class="accept">
+      <input
+        type="checkbox"
+        id="accept_checked"
+        name="accept_terms"
+        onclick="enableBtn()"
+      />
+      <label for="accept_checked"
+        >I have read & accept
+        <a href="terms.html" target="_blank">Terms of Use</a></label
+      >
+    </div>
+  </body>
+  <script type="text/javascript">
+    function enableBtn() {
+      if (document.getElementById("accept_checked").checked == true) {
+        document.getElementById("termsCheck").disabled = false;
+        document.getElementById("termsCheck2").disabled = false;
+        document.getElementById("termsCheck3").disabled = false;
+      } else {
+        document.getElementById("termsCheck").disabled = true;
+        document.getElementById("termsCheck2").disabled = true;
+        document.getElementById("termsCheck3").disabled = true;
+      }
+    }
+  </script>
+  <div th:replace="fragments/footer :: footer" />
+</html>

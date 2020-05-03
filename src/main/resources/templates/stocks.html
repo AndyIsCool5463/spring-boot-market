@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- This needs to be entered first.-->
+    <div th:replace="fragments/generalCSS :: css" />
+</head>
+
+<body>
+    <div th:replace="fragments/header :: header" />
+    <div class="sidenav">
+        <p class="stonks">Stocks</p>
+        <a href="aapl.html">Apple (AAPL)</a>
+    </div>
+    
+    
+    <p class="AAPL">
+        <img src="images/APPL.png" alt="AAPL" width="100" height="100" hspace="">
+        <p><button class="btn apple"> <a href="aapl.html">AAPL</button></p>
+    </p>
+</body>
+<div th:replace="fragments/footer :: footer" />
+
+</html>

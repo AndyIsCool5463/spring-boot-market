@@ -1,0 +1,594 @@
+.landingHead {
+  background-color: #ffffff;
+  overflow: hidden;
+  border: 2px black;
+}
+
+.landingHead li {
+  float: right;
+  text-decoration: none;
+  list-style-type: none;
+  color: #add8e6;
+  padding: 5px 10px;
+  font-family: sans-serif;
+  font-size: 18px;
+
+}
+
+.landingHead li:hover {
+  text-decoration-color: #00008b;
+}
+
+.landingHead p {
+  color: black;
+  position: absolute;
+  margin-left: 650px;
+  margin-top: 3px;
+  font-size: 22px;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+
+
+}
+
+.logo {
+
+  padding: 100px 200px;
+  text-align: center;
+}
+
+.btn {
+  align-items: center;
+  justify-content: center;
+  border: 2px solid black;
+  background-color: white;
+  color: black;
+  text-decoration: none;
+  padding: 14px 28px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.start {
+
+ border-color: #e7e7e7;
+ text-decoration: none;
+  color: black;
+  align-items: center;
+  justify-content: center;
+}
+
+.start:hover {
+  background: #e7e7e7;
+}
+
+footer {
+  position: fixed;
+  color: black;
+  text-decoration: none;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #e7e7e7;
+  color: black;
+  text-align: center;
+
+}
+
+
+.landingFooter {
+color: black;
+text-decoration: none;
+overflow: hidden;
+border: 2px black;
+
+
+}
+
+.landingFooter li {
+  display: inline;
+  text-decoration: none;
+  list-style-type: none;
+  color: #add8e6;
+  padding: 30px 10px;
+  font-family: sans-serif;
+  font-size: 18px;
+
+}
+
+/*_______________________*/
+
+.stock {
+position: fixed;
+bottom: 300px;
+right: 100px;
+left: 450px;
+
+}
+
+
+.stocks {
+
+position: fixed;
+bottom: 250px;
+right: 100px;
+left: 450px;
+width: 18%;
+ border-color: #e7e7e7;
+ text-decoration: none;
+  color: black;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.stocks:hover {
+  background: #e7e7e7;
+}
+
+
+.commodities {
+position: fixed;
+bottom: 300px;
+right: 100px;
+left: 770px;
+
+
+}
+
+.commodities2 {
+
+position: fixed;
+bottom: 250px;
+right: 100px;
+left: 770px;
+width: 18%;
+align-self: center;
+border-color: #e7e7e7;
+ text-decoration: none;
+  color: black;
+  align-items: center;
+  justify-content: center;
+}
+
+.commodities2:hover {
+  background: #e7e7e7;
+}
+
+
+.sidenav {
+  width: 350px;
+  height: 590px;
+  position: fixed;
+  top: 85px;
+  left: 0px;
+  background: white;
+  border: solid 1px lightgrey;
+  padding: 8px 0px;
+}
+
+.sidenav a {
+  position: fixed;
+  top: 150px;
+  left: 25px;
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: black;
+  display: block;
+  font-family: sans-serif;
+}
+
+.sidenav a:hover {
+  color: #2196F3;
+}
+
+.AAPL {
+position: fixed;
+top: 100px;
+right: 100px;
+left: 450px;
+
+}
+
+
+.apple {
+
+ position: fixed;
+top: 230px;
+right: 80px;
+left: 440px;
+width: 8%;
+align-self: center;
+border-color: #e7e7e7;
+ text-decoration: none;
+  color: black;
+  align-items: center;
+  justify-content: center;
+}
+
+.apple:hover {
+  background: #e7e7e7;
+}
+
+.stonks {
+
+position: fixed;
+left: 25px;
+font-family: sans-serif;
+font-size: 22px;
+color: #2196F3
+
+}
+
+.stonks2 {
+
+position: fixed;
+left: 25px;
+top: 235px;
+font-family: sans-serif;
+font-size: 22px;
+color: #2196F3
+
+}
+
+.sidenav2 {
+  width: 350px;
+  height: 590px;
+  position: fixed;
+  top: 85px;
+  left: 0px;
+  background: white;
+  border: solid 1px lightgrey;
+  padding: 8px 0px;
+}
+
+.sidenav2 a {
+  position: relative;
+  top: 35px;
+  padding: 2px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: black;
+  display: block;
+  font-family: sans-serif;
+}
+
+.sidenav2 a:hover {
+  color: #2196F3;
+
+}
+
+.longterm {
+position: relative;
+top: 0px;
+left: 400px;
+color: #2196F3;
+font-size: 30px;
+font-family: sans-serif;
+}
+
+.trend {
+position: relative;
+top: 20px;
+left: 420px;
+color: #2196F3;
+font-size: 24px;
+font-family: sans-serif;
+}
+
+.trending {
+
+width: 50%;
+position: relative;
+top: 20px;
+left: 420px;  
+}
+
+.deviation {
+position: relative;
+top: 50px;
+left: 420px;
+color: #2196F3;
+font-size: 24px;
+font-family: sans-serif;
+
+}
+
+.deviationn {
+width: 50%;
+position: relative;
+top: 50px;
+left: 420px;
+
+}
+
+.history {
+position: relative;
+top: 70px;
+left: 420px;
+color: #2196F3;
+font-size: 24px;
+font-family: sans-serif;
+
+}
+
+.historyy {
+width: 50%;
+position: relative;
+top: 70px;
+left: 420px;
+
+}
+
+.comp {
+position: relative;
+top: 90px;
+left: 420px;
+color: #2196F3;
+font-size: 30px;
+font-family: sans-serif;
+
+
+}
+
+.pe {
+position: relative;
+top: 110px;
+left: 420px;
+color: #2196F3;
+font-size: 24px;
+font-family: sans-serif;
+
+}
+
+.valuation {
+position: relative;
+top: 150px;
+left: 420px;
+color: #2196F3;
+font-size: 24px;
+font-family: sans-serif;
+
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: separate;
+  width: 50%;
+  position: relative;
+  top: 145px;
+  left: 420px;
+  empty-cells: hide;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+.history2 {
+position: relative;
+top: 180px;
+left: 420px;
+color: #2196F3;
+font-size: 24px;
+font-family: sans-serif;
+
+}
+
+.historyy2 {
+width: 50%;
+position: relative;
+top: 180px;
+left: 420px;
+
+}
+
+/* PROJECT 2 CSS ----------- */
+
+/* Login.html */
+
+body {
+
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.login_header {
+
+position: relative;
+top: 7px;
+left: 10px;
+font-size: 20px;
+margin-top: 2px;
+margin-left: 5px;
+margin-bottom: 10px;
+font-weight: lighter;
+
+}
+
+.loginform {
+  border: 1.5px solid rgba(33, 150, 243, 0.4);
+  width: 45%;
+  padding-bottom: 15px;
+  margin-top: 150px;
+  margin-left: 400px;
+
+}
+
+input[type=text], input[type=password] {
+  width: 40%;
+  padding: 10px 5px;
+  margin: 8px 10px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+input[type=text]:hover, input[type=password]:hover {
+color: #2196F3;
+
+}
+
+.login_submit {
+  background-color: white;
+  font-size: 22px;
+  color: #2196F3;
+  padding: 6px 5px;
+  margin-top: 15px;
+  border: solid 1px;
+  cursor: pointer;
+  width: 15%;
+}
+
+.login_submit:hover {
+  background-color: #2196F3;
+  color: white;
+  
+}
+
+/* Reset Password Button */
+.login_submit2 {
+  background-color: white;
+  font-size: 22px;
+  color: #2196F3;
+  padding: 6px 5px;
+  margin-top: 15px;
+  border: solid 1px;
+  cursor: pointer;
+  width: 50%;
+}
+
+.login_submit2:hover {
+  background-color: #2196F3;
+  color: white;
+  
+}
+
+/*--------------*/
+
+.container {
+  padding: 0.5px 5px 4px 5px;
+  margin-left: 50px;
+
+}
+
+.container2 {
+  padding: 0.5px 5px 4px 5px;
+  border-bottom: 1.5px solid rgba(33, 150, 243, 0.4);
+
+}
+
+span.psw {
+  margin-left: 10px;
+  padding: 5px 5px 5px 5px;
+  background-color: #F8F8F8;
+  cursor: pointer;
+}
+
+span.psw:hover {
+  background-color: lightgray;
+}
+
+ /* resetpassword.html ------ */
+
+
+
+ /* pricing.html ------------- */
+
+.register1 {
+
+  border: 2.5px solid #cd7f32;
+  width: 15%;
+  padding-bottom: 25px;
+  position: absolute;
+  top: 240px;
+  left: 350px;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+
+}
+
+.register2 {
+
+  border: 2.5px solid #C0C0C0;
+  width: 15%;
+  padding-bottom: 25px;
+  position: absolute;
+  top: 240px;
+  left: 620px;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+
+}
+
+.register3 {
+
+  border: 2.5px solid #d4af37;
+  width: 15%;
+  padding-bottom: 25px;
+  position: absolute;
+  top: 240px;
+  left: 890px;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+
+}
+
+.day_subscribe {
+
+  background-color: white;
+  font-size: 20px;
+  color: #b08d57;
+  padding: 6px 5px;
+  margin-top: 15px;
+  margin-left: 48px;
+  border: solid 1px;
+  cursor: pointer;
+  width: 57%;
+}
+
+.quarter_subscribe {
+
+  background-color: white;
+  font-size: 20px;
+  color: #C0C0C0;
+  padding: 6px 5px;
+  margin-top: 15px;
+  margin-left: 48px;
+  border: solid 1px;
+  cursor: pointer;
+  width: 57%;
+}
+
+.year_subscribe {
+
+  background-color: white;
+  font-size: 20px;
+  color: #d4af37;
+  padding: 6px 5px;
+  margin-top: 15px;
+  margin-left: 48px;
+  border: solid 1px;
+  cursor: pointer;
+  width: 57%;
+}
+
+.day_subscribe:hover {
+  background-color: #b08d57;
+  color: white;
+
+}
+
+.quarter_subscribe:hover {
+  background-color: #C0C0C0;
+  color: white;
+}
+
+.year_subscribe:hover {
+  background-color: #d4af37;
+  color: white;
+}
+
+.accept {
+position: absolute;
+top: 530px;
+left: 610px;
+}

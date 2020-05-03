@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <!-- This needs to be entered first.-->
+    <div th:replace="fragments/generalCSS :: css" />
+  </head>
+  <body>
+    <div class="container2" style="background-color: whitesmoke;">
+      <h2 class="login_header">Login</h2>
+    </div>
+    <div class="container">
+      <form th:action="@{/login}" method="POST">
+        <div th:if="${param.error}">
+          invalid username password thing
+        </div>
+        <div th:if="${param.logout}">
+          hahaha logged out
+        </div>
+        <div class="form-group">
+          <label for="username">Email</label>
+          <input type="text" id="username" name="username" />
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" />
+        </div>
+        <div class="form-group">
+          <input type="submit" name="login-submit" id="login-submit" />
+        </div>
+        <div class="form-group">
+          <span
+            >New User?
+            <a href="/" th:href="@{/register}">Register here</a></span
+          >
+        </div>
+      </form>
+    </div>
+  </body>
+  <div th:replace="fragments/footer :: footer" />
+</html>

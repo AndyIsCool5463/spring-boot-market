@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- This needs to be entered first.-->
+    <div th:replace="fragments/generalCSS :: css" />
+</head>
+
+<body>
+    <div th:replace="fragments/header :: header" />
+    <p class="stock">
+        <img src="images/stockLOGO.png" alt="stock" width="280" height="156" hspace="">
+        <p><button class="btn stocks"> <a href="stocks.html">STOCKS</button></p>
+    </p>
+    
+    <p class="commodities">
+        <img src="images/commoditiesLOGO.png" alt="commodities" width="280" height="156" hspace="">
+        <p><button class="btn commodities2"> <a href="">COMMODITIES</button></p>
+        </div>
+    </p>
+</body>
+<div th:replace="fragments/footer :: footer" />
+
+</html>

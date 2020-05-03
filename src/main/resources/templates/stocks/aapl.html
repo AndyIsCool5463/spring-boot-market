@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- This needs to be entered first.-->
+    <div th:replace="fragments/generalCSS :: css" />
+</head>
+
+<body>
+    <div th:replace="fragments/header :: header" />
+    <div class="sidenav2">
+        <p class="stonks">Long-Term Trend</p>
+        <ul style="list-style-type:none;">
+            <li><a href="#trends">Trend</a></li>
+            <li><a href="#deviation">Deviation</a></li>
+            <li><a href="#history">History</a></li>
+        </ul>
+    
+        <br>
+    
+        <p class="stonks2">Comparable Valuation</p>
+        <ul style="list-style-type:none;">
+            <li><a href="#PE">P/E to Growth Forward</a>
+            <li><a href="#valuation">Valuation</a></li>
+            <li><a href="#history2">History</a></li>
+        </ul>
+    </div>
+    
+    <!-- -------------------- -->
+    
+    <div>
+        <h1 class="longterm">Long-Term Trend</h1>
+    
+        <h1 class="trend"><a id="trends">Trend</a></h1>
+        <img class="trending" src="images/trend.png" width="400" height="400">
+    
+        <h1 class="deviation"><a id="deviation">Deviation</a></h1>
+        <img class="deviationn" src="images/deviation.png" width="400" height="400">
+    
+        <h1 class="history"><a id="history">History</a></h1>
+        <img class="historyy" src="images/history.png" width="400" height="400">
+    
+        <h1 class="comp">Comparable Valuation</h1>
+        <h1 class="pe"><a id="PE">P/E to Growth Forward</a></h1>
+        <h1 class="valuation"><a id="valuation">Valuation</h1>
+    
+        <!-- TABLE -->
+    
+        <table>
+    
+            <tr>
+                <th>Company</th>
+                <th>Ticker</th>
+                <th>Stock Price</th>
+                <th>Avg. Earnings Estimate (current year)</th>
+                <th>Avg. Earnings Estimate (next year)</th>
+                <th>Estimated Annual Growth</th>
+                <th>P/E to Growth (forward)</th>
+            </tr>
+            <tr>
+                <td>Alphabet</td>
+                <td>GOOGL</td>
+                <td>$1,315</td>
+                <td>$53.94</td>
+                <td>$62.47</td>
+                <td>15.81%</td>
+                <td>1.33</td>
+            <tr>
+                <td>Microsoft</td>
+                <td>MSFT</td>
+                <td>$158</td>
+                <td>$5.68</td>
+                <td>$6.3</td>
+                <td>10.92%</td>
+                <td>2.30</td>
+            </tr>
+            <tr>
+                <td>Facebook</td>
+                <td>FB</td>
+                <td>$190</td>
+                <td>$9.11</td>
+                <td>$10.91</td>
+                <td>19.76%</td>
+                <td>0.88</td>
+            </tr>
+            <tr>
+                <td>Alibaba Group</td>
+                <td>BABA</td>
+                <td>$205</td>
+                <td>$50.52</td>
+                <td>$61.09</td>
+                <td>20.92%</td>
+                <td>0.16</td>
+            </tr>
+            <tr>
+                <td>Paypal</td>
+                <td>PYPL</td>
+                <td>$108</td>
+                <td>$3.45</td>
+                <td>$4.17</td>
+                <td>20.87%</td>
+                <td>1.24</td>
+            </tr>
+            <!-- ------- -->
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>1st Quartile</td>
+                <td>0.88</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>Median</td>
+                <td>1.24</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>3rd Quartile</td>
+                <td>1.33</td>
+            </tr>
+            <tr>
+                <td>Apple</td>
+                <td>AAPL</td>
+                <td>$274</td>
+                <td>$13.61</td>
+                <td>$15.68</td>
+                <td>15.21%</td>
+                <td>1.15</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>Implied Share Price</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>1st Quartile</td>
+                <td>$210</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>Median</td>
+                <td>$296</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>3rd Quartile</td>
+                <td>$317</td>
+            </tr>
+        </table>
+        <!-- END TABLE -->
+    
+        <h1 class="history2"><a id="history2">History</a></h1>
+        <img class="historyy2" src="images/history2.png" width="400" height="400">
+        <p>C</p>
+        <p>P</p>
+        <p>S</p>
+        <p>3</p>
+        <p>5</p>
+        <p>0</p>
+        <p>0</p>
+        <p>-</p>
+        <p>0</p>
+        <p>0</p>
+        <p>1</p>
+        <p>Because the footer is fixed...</p>
+    </div>
+</body>
+<div th:replace="fragments/footer :: footer" />
+
+</html>

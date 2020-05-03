@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <!-- This needs to be entered first.-->
+    <div th:replace="fragments/generalCSS :: css" />
+    <script src="js/check.js"></script>
+  </head>
+
+  <body>
+    <div th:replace="fragments/header :: header" />
+    <div th:if="${param.success}">
+        <div class="alert alert-info">
+            You have registered.
+        </div>
+    </div>
+    <div th:if="${param.error}">
+        THERE IS ERROR?!?!?!?!
+    </div>
+    </div>
+    <form  method="POST" th:action="@{/register}" th:object="${user}" class="registerform">
+      <div class="container2" style="background-color: whitesmoke;">
+        <h2 class="login_header">Register</h2>
+      </div>
+
+      <div class="container">
+          <div class="form-group" th:classappend="${#fields.hasErrors('firstName')}? 'has-error': ''">
+                <label for="firstName"><b>First Name</b></label>
+                <input type="text" placeholder="Enter First Name" th:field="*{firstName}" name="firstName" required />
+            <br />
+          </div>
+        <div class="form-group" th:classappend="${#fields.hasErrors('lastName')}? 'has-error': ''">
+
+        </div>
+        <label for="lastName"><b>Last Name</b></label>
+        <input type="text" placeholder="Enter Last Name" th:field="*{lastName}" name="lastName" required />
+        
+        <br />
+        <div class="form-group" th:classappend="${#fields.hasErrors('email')}? 'has-error': ''">
+                <label for="email"><b>E-mail Address</b></label>
+                <input type="text" placeholder="Enter Email" name="email" th:field="*{email}" id="email" required />
+                <p class="error-message" th:each="error : ${#fields.errors('email')}" th:text="${error}">
+                            Validation Error.
+                        </p>
+                        <br />
+                </div>
+
+        <div class="form-group" th:classappend="${#fields.hasErrors('confirmEmail')}? 'has-error': ''">
+                <label for="confirmEmail"><b>Confirm E-mail Address</b></label>
+                <input type="text" placeholder="Confirm Email" name="confirmEmail" th:field="*{confirmEmail}" id="confirmEmail"
+                    required />
+                <p class="error-message" th:each="error : ${#fields.errors('confirmEmail')}" th:text="${error}">
+                                    Validation Error.
+                                </p>
+                        <br />
+                </div>
+
+        <div class="form-group" th:classappend="${#fields.hasErrors('password')}? 'has-error': ''">
+                <label for="password"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="password" id="password" th:field="*{password}" required />
+                <p class="error-message" th:each="error : ${#fields.errors('password')}" th:text="${error}">
+                           Validation Error.
+                        </p>
+                        <br />
+        </div>
+        <div class="form-group" th:classappend="${#fields.hasErrors('confirmPassword')}? 'has-error': ''">
+        <label for="confirmPassword"><b>Confirm Password </b></label>
+        <input type="password" placeholder="Confirm Password" name="confirmPassword" th:field="*{confirmPassword}"
+            id="confirmPassword" required />
+        <p class="error-message" th:each="error : ${#fields.errors('confirmPassword')}" th:text="${error}">
+                    Validation Error.
+                </p>        
+                <br />
+                </div>
+        
+
+        <button
+          type="submit"
+          class="login_submit"
+        >
+          Register
+        </button>
+      </div>
+    </form>
+
+    <p id="result2"></p>
+    <p id="result"></p>
+    <p id="result3"></p>
+  </body>
+  <div th:replace="fragments/footer :: footer" />
+</html>
