@@ -1,25 +1,96 @@
 <!DOCTYPE html>
 
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-
-<head>
+  <head>
     <!-- This needs to be entered first.-->
     <div th:replace="fragments/generalCSS :: css" />
-</head>
+  </head>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 50%;
+    }
 
-<body>
-    <div th:replace="fragments/header :: header" />
-    <div class="sidenav">
-        <p class="stonks">Stocks</p>
-        <a href="aapl.html">Apple (AAPL)</a>
+    table,
+    th,
+    td {
+      border: solid black 2px;
+    }
+
+    th {
+      height: 50px;
+    }
+
+    th,
+    td {
+      text-align: center;
+    }
+  </style>
+  <body>
+        <div>
+            <div class="sidenav">
+                <p class="stonks">Stocks</p>
+                <a href="/aapl">Apple (AAPL)</a>
+            </div>
+        
+        
+            <p class="AAPL">
+                <img src="images/APPL.png" alt="AAPL" width="100" height="100" hspace="">
+                <p><button class="btn apple"> <a href="/aapl">AAPL</button></p>
+            </p>
+        
+        </div>
+
+    <div th:replace="fragments/header :: header(page = 'markets', page1= 'stocks')" />
+    <div th:if="${allStocks} != null">
+      <h1>Stock list</h1>
+      <div>
+        <p>Comparable Apple Valuation</p>
+        <table style="border: solid 2px;">
+          <!-- <caption> Comparable Apple Valuation</caption> -->
+          <tr>
+            <th>Company</th>
+            <th>Ticker</th>
+            <th>Stock price</th>
+          </tr>
+
+          <tr th:each="stock : ${allStocks}">
+            <td th:text="${stock.company}"></td>
+            <td th:text="${stock.ticker}"></td>
+            <td th:text="'$' + ${stock.price}"></td>
+          </tr>
+        </table>
+      </div>
     </div>
-    
-    
-    <p class="AAPL">
-        <img src="images/APPL.png" alt="AAPL" width="100" height="100" hspace="">
-        <p><button class="btn apple"> <a href="aapl.html">AAPL</button></p>
-    </p>
-</body>
-<div th:replace="fragments/footer :: footer" />
-
+    <div th:if="${stockPEs} != null">
+      <h1>Stock PE list</h1>
+      <div>
+        <p>Comparable Apple Valuation</p>
+        <table style="border: solid 2px;">
+          <!-- <caption> Comparable Apple Valuation</caption> -->
+          <tbody>
+            <tr>
+              <th>Company</th>
+              <th>Ticker</th>
+              <th>Stock price</th>
+              <th>Avg. Earnings Estimate<br />(current year)</th>
+              <th>Avg. Earnings Estimate<br />(next year)</th>
+              <th>Estimated Annual Growth</th>
+              <th>P/E to Growth<br />(forward)</th>
+            </tr>
+            <tr th:each="stockPE: ${stockPEs}">
+              <td th:text="${stockPE.company}"></td>
+              <td th:text="${stockPE.ticker}"></td>
+              <td th:text="'$' + ${stockPE.price}"></td>
+              <td th:text="'$' + ${stockPE.this_year_earning}"></td>
+              <td th:text="'$' + ${stockPE.next_year_earning}"></td>
+              <td th:text="${stockPE.growth} + '%'"></td>
+              <td th:text="${stockPE.pe_to_growth}"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+  <div th:replace="fragments/footer :: footer" />
 </html>

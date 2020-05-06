@@ -4,11 +4,10 @@
   <head>
     <!-- This needs to be entered first.-->
     <div th:replace="fragments/generalCSS :: css" />
-    <script src="js/check.js"></script>
   </head>
 
   <body>
-    <div th:replace="fragments/header :: header" />
+    <div th:replace="fragments/header :: header(page = 'pricing', page1 = 'register')" />
     <div th:if="${param.success}">
         <div class="alert alert-info">
             You have registered.
@@ -21,7 +20,7 @@
     </div>
     </div>
     <div class="container">
-          <form method="POST" th:action="@{/register}" th:object="${user}" class="registerform">
+          <form method="POST" th:action="@{/register}" id="registerForm" th:object="${user}" class="registerform">
             <div class="container2" style="background-color: whitesmoke;">
               <h2 class="login_header">Register</h2>
             </div>
@@ -38,6 +37,8 @@
               <div class="form-group" th:classappend="${#fields.hasErrors('email')}? 'has-error': ''">
                           <label  th:classappend="${#fields.hasErrors('email')}? text-danger" class="col-sm-2 col-form-label" for="email"><b>E-mail Address</b></label>
                           <input type="email" class="form-control"  placeholder="Enter Email" name="email" th:field="*{email}" id="email" required />
+                          <!-- this is for client side validation. -->
+                          <small id="validationEmail" class="text-danger"></small>
                           <small class="text-danger" th:each="error : ${#fields.errors('email')}" th:text="${error}">
                                       Validation Error.
                           </small>
@@ -46,12 +47,16 @@
                <div class="form-group" th:classappend="${#fields.hasErrors('confirmEmail')}? 'has-error': ''">
                           <label th:classappend="${#fields.hasErrors('email')}? text-danger : null" class="col-sm-2 col-form-label" for="confirmEmail"><b>Confirm E-mail Address</b></label>
                           <input type="email" class="form-control" placeholder="Confirm Email" name="confirmEmail" th:field="*{confirmEmail}" id="confirmEmail" required />
+                          <!-- this is for client side validation. -->
+                          <small id="validationEmailVerify" class="text-danger"></small>
                           <small class="text-danger" th:each="error : ${#fields.errors('confirmEmail')}" th:text="${error}">Validation Error.</small>
                </div>
           
                <div class="form-group" th:classappend="${#fields.hasErrors('password')}? 'has-error': ''">
                           <label class="col-sm-2 col-form-label" for="password"><b>Password</b></label>
                           <input type="password" placeholder="Enter Password" name="password" id="password" th:field="*{password}" required />
+                          <!-- this is for client side validation. -->
+                          <small id="passwordError" class="text-danger"></small>
                           <small class="text-danger" th:each="error : ${#fields.errors('password')}" th:text="${error}">
                                      Validation Error.
                                   </small>
@@ -60,18 +65,22 @@
                   <label class="col-sm-2 col-form-label" for="confirmPassword"><b>Confirm Password </b></label>
                   <input type="password" placeholder="Confirm Password" name="confirmPassword" th:field="*{confirmPassword}"
                       id="confirmPassword" required />
-                  <small class="text-danger" th:each="error : ${#fields.errors('confirmPassword')}" th:text="${error}">Validation Error.</small>        
+                  <!-- this is for client side validation. -->
+                  <small id="confirmPasswordError" class="text-danger"></small>
+                      <small class="text-danger" th:each="error : ${#fields.errors('confirmPassword')}" th:text="${error}">Validation Error.</small>        
                </div>
                <div class="form-group form-check" th:classappend="${#fields.hasErrors('terms')}? 'has-error':''">
                     <input id="terms" type="checkbox" th:field="*{terms}" />
                     <label class="control-label" for="terms">
                       I agree with the <a href="/terms" target="_blank">terms and conditions</a> for registration.
                     </label>
+                    <!-- this is for client side validation. -->
+                    <small id="termError" class="text-danger"></small>
                     <small class="text-danger" th:each="error : ${#fields.errors('terms')}" th:text="${error}">
                       Validation Error.
                     </small>
                </div>
-               <button type="submit" class="login_submit"> Register</button>
+               <button type="submit" id="sButton" class="login_submit"> Register</button>
               <span>Already Registered? <a href="/login" th:href="@{/login}">Login here.</a></span>
                 </div>
               </form>
@@ -81,4 +90,6 @@
     <p id="result3"></p>
   </body>
   <div th:replace="fragments/footer :: footer" />
+  <!-- this needs to be at the end of the file in order for all the selectors to work. If we have time we can try out the *defer* method and see if that works.-->
+  <script src="js/check.js"></script>
 </html>

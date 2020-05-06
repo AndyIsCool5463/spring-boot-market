@@ -42,7 +42,9 @@
   <body>
     <div th:fragment="header" class="landingHead">
       <nav>
-        <p>Home ↓</p>
+        <p th:classappend="${module == 'index' ? 'active' : ''}">
+          <a href="/">Home</a> ➡ <a th:href="@{'/' + ${page}}" th:text="${page}"></a> ➡ <a th:href="@{'/' + ${page1}}" th:text="${page1}"></a>➡ <a th:href="@{'/' + ${page2}}" th:text="${page2}"></a>
+        </p>
         <ul>
           <img src="images/VisualizedAnalyticsSmall.png" alt="logo">
               <li sec:authorize="isAnonymous()"><a href="/login">LOGIN</a></li>

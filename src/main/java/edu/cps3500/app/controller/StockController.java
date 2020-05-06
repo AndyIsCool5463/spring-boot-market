@@ -16,18 +16,11 @@ public class StockController {
     @Autowired
     private StockService stockService;
 
-    @GetMapping("/pe2growth")
-    public String pe2growth(@RequestParam(name = "ticker", required = true) String ticker, Model model) {
+    @GetMapping("/stocks")
+    public String pe2growth(@RequestParam(name = "ticker", defaultValue = "APPL", required = false) String ticker,
+            Model model) {
         List<StockPE> stockPEs = stockService.getStockPEs(ticker.toLowerCase());
         model.addAttribute("stockPEs", stockPEs);
-        return "table";
+        return "stocks";
     }
-
-    @GetMapping("/stocks")
-    public String stocks(Model model) {
-        List<StockPE> stockPEs = stockService.getAllStocks();
-        model.addAttribute("allStocks", stockPEs);
-        return "table";
-    }
-
 }

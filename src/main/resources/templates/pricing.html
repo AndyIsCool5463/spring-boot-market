@@ -7,7 +7,7 @@
   </head>
 
   <body>
-    <div th:replace="fragments/header :: header" />
+    <div th:replace="fragments/header :: header(page='pricing')" />
     <div class="register1">
       <h2 align="center">ONE DAY</h2>
       <br />
@@ -16,7 +16,7 @@
         type="submit"
         class="day_subscribe"
         id="termsCheck"
-        onclick="window.location.href = 'register.html';"
+        onclick="window.location.href = '/register';"
         disabled
       >
         SUBSCRIBE
@@ -31,7 +31,7 @@
         type="submit"
         class="quarter_subscribe"
         id="termsCheck2"
-        onclick="window.location.href = 'register.html';"
+        onclick="window.location.href = '/register';"
         disabled
       >
         SUBSCRIBE
@@ -46,7 +46,7 @@
         type="submit"
         class="year_subscribe"
         id="termsCheck3"
-        onclick="window.location.href = 'register.html';"
+        onclick="window.location.href = '/register';"
         disabled
       >
         SUBSCRIBE
@@ -62,7 +62,7 @@
       />
       <label for="accept_checked"
         >I have read & accept
-        <a href="terms.html" target="_blank">Terms of Use</a></label
+        <a href="/terms" target="_blank">Terms of Use</a></label
       >
     </div>
   </body>

@@ -29,7 +29,7 @@ public class DefaultController {
     }
 
     @GetMapping("/aapl")
-    public String AAPL() {
+    public String appl() {
         return "stocks/aapl";
     }
 

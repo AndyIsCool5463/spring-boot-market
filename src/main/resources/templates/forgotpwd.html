@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <div th:replace="fragments/header :: header" />
+    <div th:replace="fragments/header :: header(page = 'login', page1 = 'forgotpass')" />
     <div th:if="${param.sent}">
     <div class="alert alert-info">
         Check your email.

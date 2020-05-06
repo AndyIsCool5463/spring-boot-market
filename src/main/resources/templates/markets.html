@@ -8,10 +8,10 @@
 </head>
 
 <body>
-    <div th:replace="fragments/header :: header" />
+    <div th:replace="fragments/header :: header(page = 'markets')" />
     <p class="stock">
         <img src="images/stockLOGO.png" alt="stock" width="280" height="156" hspace="">
-        <p><button class="btn stocks"> <a href="stocks.html">STOCKS</button></p>
+        <p><button class="btn stocks"> <a href="/stocks">STOCKS</button></p>
     </p>
     
     <p class="commodities">
